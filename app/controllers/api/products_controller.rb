@@ -13,6 +13,10 @@ class Api::ProductsController < ApplicationController
     render 'index.json.jbuilder'
   end
 
+  def show
+    
+  end
+
   def update
     @products = Products.find(params[:id])
     @products.name = params[:name] || @products.name
@@ -33,5 +37,9 @@ class Api::ProductsController < ApplicationController
     else
       render json: {errors: @product.errors.full_messages}, status: :unprocessible_entity
     end
+  end
+
+  def destroy
+    
   end
 end
